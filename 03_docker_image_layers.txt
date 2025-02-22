@@ -1,0 +1,10 @@
+🎯 What Are Layers in Docker Images?
+    Docker images are made up of multiple layers, and each layer represents an 
+    incremental change to the image. When a container is run from an image, Docker stacks these
+    layers together to create the final file system for the container.
+
+    👉 How Layers Work? 
+        1) Every instruction in a Dockerfile (like FROM, RUN, COPY) creates a new layer.
+        2) Layers are cached—Docker reuses existing layers when building images, speeding up the process.
+        3) Layers are read-only in an image. When a container is created from an image, Docker adds a writable 
+           layer on top, allowing changes.
