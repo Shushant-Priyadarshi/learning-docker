@@ -1,0 +1,28 @@
+🎯 Port Binding:
+    Port binding in Docker is the process of mapping a container’s internal port to a port on the host machine, allowing external access to the application running inside the container.
+
+
+    👉 How Port Binding Works
+        Containers run in isolated environments, meaning their internal services (like a web server on port 80) are not automatically accessible from the outside.
+        To make the service accessible, you must bind a host port to the container port.
+
+        👍 docker run -d -p <host_port>:<container_port> <image_name>
+
+        👍 Example:
+
+            1️⃣ Running a Web Server in a Container:
+                => docker run -d -p 8080:5000 my-web-app
+                => The container’s port 5000 is bound to the host’s port 8080.
+                => Now, visiting http://localhost:8080 will reach the web app inside the container.
+
+            2️⃣ Running Multiple Containers on Different Ports:
+                => docker run -d -p 8080:5000 my-web-app
+                => docker run -d -p 9090:5000 my-web-app
+                => http://localhost:8080 → First instance
+                => http://localhost:9090 → Second instance
+
+
+
+
+
+
