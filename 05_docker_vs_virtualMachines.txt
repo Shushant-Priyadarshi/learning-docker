@@ -1,0 +1,22 @@
+🎯 Virtual Machine:
+    A VM emulates an entire operating system inside a Hypervisor (like VMware, VirtualBox, or KVM).
+    Each VM includes:
+    👉A guest OS (e.g., Ubuntu, Windows)
+    👉Virtualized hardware (CPU, RAM, storage)
+    👉Runs independently from the host OS
+
+    💡 Example VM Usage:
+        👉 Running a different OS on your machine (e.g., running Linux on Windows).
+        👉 Hosting multiple, fully isolated applications with different OS needs.
+
+🎯 Docker:
+    Docker shares the host OS kernel and isolates processes instead of running a full OS.
+    Each container:
+    👉Runs as a lightweight process
+    👉Has its own filesystem, libraries, and dependencies
+    👉Does not need a separate OS
+
+    💡 Example Docker Usage:
+        👉 Running microservices (small independent applications).
+        👉 Deploying scalable applications in cloud environments.
+        👉 Faster development and testing with isolated dependencies.
