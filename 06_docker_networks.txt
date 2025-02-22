@@ -1,0 +1,38 @@
+🎯 Docker Netorks:
+    👉 Docker networking allows containers to communicate with each other and the outside world.
+       It provides isolated,  customizable network environments for containerized applications.
+
+    👉 Docker provides different types of networks for different use cases. You can list them using:
+        ⟠ docker network ls
+
+        👉 It will show:
+            NETWORK ID     NAME       DRIVER    SCOPE
+            5d2f5a6a8e9d   bridge     bridge    local
+            b72c74a8f3d2   host       host      local
+            d13c63b3f5fa   none       null      local
+
+    👉 Bridge Netork(Default):
+        👉 Containers inside the same bridge network can communicate using their container names.
+        👉 Best for standalone containers (e.g., a simple web app with a database).
+        👉 Docker assigns an internal IP to each container.
+
+        ⟠ docker network create my-bridge-network
+
+
+    👉 Host Network:
+        👉 Removes network isolation between the container and the host.
+        👉 The container uses the host’s network directly.
+        👉 Best for high-performance apps that need fast network access.
+
+        ⟠ docker run -d --name my-container --network host nginx
+
+    👉 None Network:
+        👉 Completely disables networking for a container.
+        👉 Best for security-sensitive applications.
+
+        ⟠ docker run -d --name isolated-container --network none alpine sleep 1000
+    
+
+
+
+
