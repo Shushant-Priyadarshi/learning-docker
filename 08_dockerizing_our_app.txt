@@ -1,0 +1,16 @@
+🎯 Dockerizing Our App:
+
+    👉Dockerizing an application means packaging it into a Docker container so it can run consistently across  different environments. This involves:
+        ✅ Creating a Dockerfile 📄
+        ✅ Building a Docker image 🏗️
+        ✅ Running the container 🚀
+        ✅ Using Docker Compose (for multi-container apps) 🔗
+
+    ⭐️ Important Docker File Instruction:
+        1) FROM : FROM <image> - this specifies the base image that the build will extend.
+        2) WORKDIR <path> : this instruction specifies the "working directory" or the path in the image where files will be copied and commands will be executed.
+        3) COPY <host-path> <image-path> : this instruction tells the builder to copy files from the host and put them into the container image.
+        4) RUN <command> : this instruction tells the builder to run the specified command.
+        5) CMD ["<command>", "<arg1>"] : this instruction sets the default command a container using this image will run.
+        6) EXPOSE <port-number> - this instruction sets configuration on the image that indicates a port the image would like to expose.
+        7) ENV <name> <value> - this instruction sets an environment variable that a running container will use.
