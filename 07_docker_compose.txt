@@ -1,0 +1,34 @@
+🎯 Docker Compose:
+
+    👉 Docker Compose is a tool that helps define, configure, and run multi-container Docker applications using a simple YAML(Yet Another Markup Language) file (docker-compose.yml). Instead of running multiple docker run commands, Compose automates container orchestration.
+
+    ⭐️ Why Using Docker Compose?
+        ✅ Easier Management – Define multiple services (backend, frontend, database) in a single file.
+        ✅ Consistent Environment – Works the same in development, testing, and production.
+        ✅ Automated Networking – Containers in the same docker-compose.yml file are automatically networked.
+        ✅ One-Command Startup – Start everything with docker-compose up -d.
+        ✅ Volume & Environment Management – Easily define persistent storage and environment variables.
+
+    ⭐️ Commands:
+        1) docker compose -f FILE_NAME.yaml up -d         => start the containers
+        2) docker compose -f FILE_NAME.yaml down          => stop the containers
+
+    ⭐️ Example:        
+        services:
+        mongo:
+            image: mongo
+            ports:
+            - 27017:27017
+            environment:
+            MONGO_INITDB_ROOT_USERNAME: admin
+            MONGO_INITDB_ROOT_PASSWORD: qwerty
+
+        mongo-express:
+            image: mongo-express
+            ports:
+            - 8081:8081
+            environment:
+            ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+            ME_CONFIG_MONGODB_ADMINPASSWORD: qwerty
+            ME_CONFIG_MONGODB_URL: mongodb://admin:qwerty@mongo:27017/
+
